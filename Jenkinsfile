@@ -11,13 +11,13 @@ pipeline {
 
         stage('Pull Docker Image') {
             steps {
-                sh 'docker pull pritam2004/nodeapp:latest'
+                bat 'docker pull pritam2004/nodeapp:latest'
             }
         }
 
         stage('Stop Old Container') {
             steps {
-                sh '''
+                bat '''
                 docker stop $CONTAINER_NAME || true
                 docker rm $CONTAINER_NAME || true
                 '''
@@ -26,7 +26,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh '''
+                bat '''
                 docker run -d \
                 -p ${APP_PORT}:${APP_PORT} \
                 --name $CONTAINER_NAME \
@@ -37,4 +37,5 @@ pipeline {
         }
     }
 }
+
 
