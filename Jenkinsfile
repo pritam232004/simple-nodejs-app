@@ -15,15 +15,6 @@ pipeline {
             }
         }
 
-        stage('Stop Old Container') {
-            steps {
-                bat '''
-                docker stop $CONTAINER_NAME || true
-                docker rm $CONTAINER_NAME || true
-                '''
-            }
-        }
-
         stage('Run Container') {
             steps {
                 bat '''
@@ -37,5 +28,6 @@ pipeline {
         }
     }
 }
+
 
 
