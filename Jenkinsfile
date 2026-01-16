@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build pull') {
             steps {
-                bat 'docker pull %IMAGE_NAME% .'
+                bat 'docker pull %IMAGE_NAME%'
             }
         }
 
@@ -29,3 +29,4 @@ pipeline {
         }
     }
 }
+
