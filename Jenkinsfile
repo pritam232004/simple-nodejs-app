@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        IMAGE_NAME = "pritam2004/nodeapp:latest"
         CONTAINER_NAME = "node-container"
         APP_PORT = "3000"
     }
@@ -36,3 +37,4 @@ pipeline {
         }
     }
 }
+
